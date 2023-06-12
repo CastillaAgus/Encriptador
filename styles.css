@@ -1,28 +1,25 @@
 /* lineas generales */
 * {
     padding: 0;
-    margin: 0;
+    margin-bottom: 0;
     font-family: "Inter", sans-serif;
+    box-sizing: border-box;
 }
 
 .fondo {
-    height: 100%;
-    width: 100%;
     background-color: #356EA9;
 }
 
 .principal {
     display: flex;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 1rem;
-    height: 100%;
-
+    margin: 10px 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    height: 50vw;
+    width:auto;
 }
 
-/* Sección de la derecha INPUT*/
+/* ----------  Sección de la izquierda INPUT ---------------------- */
 
 ::placeholder {
     color: #0A3871;
@@ -30,32 +27,28 @@
     font-weight: normal;
 }
 
-
 .input {
-    margin: 50px  20px 0 20px;          
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    border-radius: 20px;
-    height: 100%;
+    margin: 50px;
+    padding: 10px 20px 10px 20px;
+    box-sizing: border-box;
+    max-width: 100%
 }
 
 .input textarea {
-    
-    resize: none;
     outline: none;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 28px;
+    font-weight: 300;
     border-color: transparent;
     border-radius: 20px;
     padding: 2.5rem;
+    min-height: 100%;
+    width: 100%;
+    
 
 }
 
 textarea:Hover {
     border-color: #0A3871;
-
 }
 
 .logo__exclamacion {
@@ -71,15 +64,6 @@ textarea:Hover {
     font-weight: 300;
 }
 
-.input__botones {
-    
-    width: 100%;
-    display: flex;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-    align-items: center;
-    justify-content: space-around;
-}
 
 .input__botones-Enc {
     font-size: 18px;
@@ -106,13 +90,10 @@ textarea:Hover {
 
 
 
-
-
-
-/* Sección de la derecha RESULTADO*/
+/* --------------------  Sección de la derecha RESULTADO---------------------------------*/
 
 .resultado {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin: 50px 20px 0 20px;
@@ -121,43 +102,63 @@ textarea:Hover {
     background-color: white;
     text-align: center;
     padding: 35px 40px;
-    height: 790px;
-    width:490px ;
+
 }
 
 .resultado__p-acentuado {
-    margin: 10px  10px 10px 5px;
-    padding: 10px 0;
+    margin: 20px 10px 10px 5px;
     font-weight: bold;
     text-align: center;
     font-size: 24px;
-}
-.resultado__p{
-    font-size: 20px;
-    font-weight: 300;
-    margin-bottom: 60px;
-    margin-top: 30px;
+    align-items: center;
 }
 
 .resultado__img {
-    width:80%;
-margin-top: 10px;
-margin-bottom: 40px;
+    align-items: center;
+    width: 80%;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-/* Sección del footer*/
+.resultado__textarea {
+    resize: none;
+    font-size: 20px;
+    font-weight: 300;
+    min-height: 140px;
+    border: none;
+    text-align: center;
+}
+
+.resultado__textarea:focus {
+    outline: none;
+}
+
+.resultado__button-copiar {
+    font-size: 18px;
+    border-color: #0A3871;
+    font-weight: 600;
+    width: 340px;
+    padding: 1rem;
+    border-radius: 45px;
+    color: #0A3871;
+    background-color: #FFFFFF;
+    display: none;
+}
+
+
+/*-------------------------------Sección del footer ------------------------------*/
 
 
 footer div {
-    margin: 50px 15px 0 0 ;
     display: flex;
     justify-content: flex-end;
-    align-items:end;
-    height:auto;
+    margin-top: 100px;
+    margin-bottom: 0;
+    align-items: center;
 }
 
 footer p {
-    
+
     font-size: 16px;
     font-weight: 300;
     font-style: normal;
@@ -169,4 +170,137 @@ footer p {
     width: 35px;
     height: 35px;
     margin-right: 5px;
+}
+
+/*--------------------------------------------  TABLET----------------------------*/
+@media(max-width:768px) {
+    .principal {
+        display: block;
+
+        height: auto;
+        justify-content: flex-start;
+
+    }
+
+
+    /*--- parte izquierda --- */
+    .input {
+        box-sizing: border-box;
+        margin: auto;
+        min-height: fit-content;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        width: 100%;
+    }
+
+
+    .input textarea {
+        outline: none;
+        min-height: 50vw;
+        font-size: 28px;
+        font-weight: 300;
+        border-color: transparent;
+        border-radius: 20px;
+        padding: 0.5rem;
+        margin-top: 5px;
+    }
+
+
+    .input__botones {
+
+        display: flex;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+        justify-content: space-between;
+
+    }
+
+    .resultado {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        border-radius: 20px;
+
+    }
+
+    .resultado__img {
+        display: none;
+    }
+
+    .resultado__p-acentuado {
+        width: 100%;
+        font-size: 24px;
+        align-items: center;
+    }
+
+
+    .resultado__textarea {
+        width: 100%;
+        margin-top: 0.75rem;
+        resize: none;
+        font-size: 20px;
+        font-weight: 300;
+        border: none;
+        text-align: center;
+    }
+
+    footer div {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: auto;
+    }
+
+}
+
+/* ----------------- CELULAR -------------- */
+@media (max-width:375px) {
+
+    .principal {
+        display: block;
+        height: auto;
+        margin: auto;
+    }
+    .input{
+        margin-top: 0.75rem;
+    }
+    .input__botones {
+        display: block;
+        justify-content: center;
+        box-sizing: border-box;
+        margin-top: 2rem;
+    }
+
+    .input__botones-Enc {
+
+        max-width: 100%;
+        margin-bottom: 1rem;
+
+    }
+
+    .input textarea {
+        min-height: 110vw;
+        min-width: 100%;
+
+    }
+
+    .input__botones-Des {
+        max-width: 100%;
+
+    }
+
+    .resultado__button-copiar {
+        width: 100%;
+
+    }
+
+    footer div {
+        margin-top: 10px;
+    }
+
+
 }
